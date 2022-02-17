@@ -22,7 +22,7 @@ int main() {
 	bool exit = false;
 	while (!exit) {
 		// get input and refresh input window
-		std::string input = screen.GetUserInput();	
+		std::string input = screen.GetInput();
 		
 		// handle user input (and effect the game world/display)
 		handleCommand(input, screen);

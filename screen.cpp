@@ -4,18 +4,14 @@ Screen::Screen(){
 	// create a single instace of tts for now
 	// having difficulty with segfaults
 	// prob not initializing, terminating and freeing resources properly
-	/* TextToSpeech tts; */
-	// initializing tts in a second step for now
 	this->m_tts = TextToSpeech{};
+	// initializing tts in a second step for now
 	this->m_tts.Initalize(); 
 	this->setupInputWindow();
 	this->setupOutputWindow();
 }
 
-Screen::~Screen(){
-	/* this->m_tts.Speak("good bye."); */
-	/* this->m_tts.Speak("We patiently await your return"); */
-}
+Screen::~Screen(){}
 
 void Screen::setupInputWindow(){
 	// setup input window
@@ -46,22 +42,25 @@ void Screen::setupOutputWindow(){
 void Screen::IntroScreen() {
 	int row, col;
 	getmaxyx(stdscr, row, col); /* get the number of rows and columns */
-	// LINES and COLS seem to do this too?
+	
 	// The "move"s below make the text about center adjusted
 	move((row / 2)-1, (col / 2) - 11);
-	printw("Welcome to the world!\n");
+	printw("Welcome to the world!");
 	refresh();
-	this->m_tts.Speak("Welcome to the world!\n");
-	move(row / 2, (col / 2) - 25);
-	printw("Use the commands 'move' and 'look' to move and look\n\n");
-	refresh();
-	this->m_tts.Speak("Use the commands 'move' and 'look' to move and look\n\n");
+	this->m_tts.Speak("Welcome to the world!");
 	
-	move((row / 2) + 1, (col / 2) - 17);
-	printw("Press any character to continue...\n");
+	printw("\n");
+	move(row / 2, (col / 2) - 25);
+	printw("Use the commands 'move' and 'look' to move and look");
 	refresh();
-	this->m_tts.Speak("Press any character to continue...\n");
-	move(0, 0);
+	this->m_tts.Speak("Use the commands 'move' and 'look' to move and look");
+	
+	printw("\n");
+	move((row / 2) + 2, (col / 2) - 17);
+	printw("Press any character to continue...");
+	refresh();
+	this->m_tts.Speak("Press any character to continue...");
+	
 	// wait for input and clear and refresh
 	getch();
 	clear();
@@ -69,7 +68,7 @@ void Screen::IntroScreen() {
 }
 
 
-std::string Screen::GetUserInput() {
+std::string Screen::GetInput() {
 	wclear(this->inWin);    // clears the text in the window
 	box(this->inWin, 0, 0); // replace the box around the window
 	wrefresh(this->inWin);  // redraw inputWin

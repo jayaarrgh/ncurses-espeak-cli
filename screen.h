@@ -16,7 +16,7 @@ class Screen {
 		Screen();
 		~Screen();
 		void IntroScreen();
-		std::string GetUserInput();
+		std::string GetInput();
 		void Output(const std::string&) const;
 };
 
