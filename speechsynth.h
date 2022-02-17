@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstring>
+
 #include <espeak-ng/speak_lib.h>
 
 
@@ -32,13 +33,9 @@ public:
 		espeak_SetVoiceByName(voicename);
 	}
 
-	void Initalize(std::string voicename){
-		// convert string name input to char arr
+	void Initalize(const char * voicename){
 		espeak_Initialize(m_output, m_buflength, m_path, m_options);
-		int s_len = voicename.length();
-		char voicename_char_array[s_len + 1];
-		strcpy(voicename_char_array, voicename.c_str());	
-		espeak_SetVoiceByName(voicename_char_array);
+		espeak_SetVoiceByName(voicename);
 	}
 
 	void Speak(const std::string& text) const {
