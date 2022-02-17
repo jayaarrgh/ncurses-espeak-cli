@@ -1,8 +1,4 @@
-#include <iostream>
-
 #include <ncurses.h>
-
-#include "speechsynth.h"
 #include "screen.h"
 #include "input.h"
 

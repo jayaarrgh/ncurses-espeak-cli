@@ -1,8 +1,7 @@
 #ifndef TTS_H
 #define TTS_H
 
-#include <iostream>
-#include <cstring>
+#include <string>
 
 #include <espeak-ng/speak_lib.h>
 
