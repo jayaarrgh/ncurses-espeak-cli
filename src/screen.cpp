@@ -6,7 +6,8 @@ Screen::Screen() {
 	// prob not initializing, terminating and freeing resources properly
 	this->m_tts = TextToSpeech{};
 	// initializing tts in a second step for now
-	this->m_tts.Initalize("f5");
+	/* this->m_tts.Initalize("f5"); */
+	this->m_tts.Initalize();
 	this->setupInputWindow();
 	this->setupOutputWindow();
 }
@@ -28,7 +29,6 @@ void Screen::setupOutputWindow() {
 	// 	if we want scroll back we need
 	// 		handle KEY_UP/DOWN
 	// 		and probably another lib (Pads)
-
 	scrollok(outWin, TRUE);
 	// print some empty lines to get the output at the bottom of the win
 	// hacky, but I don't want to manage an index right now

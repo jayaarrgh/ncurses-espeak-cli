@@ -1,4 +1,4 @@
 all:
-	g++ -g screen.cpp main.cpp -lespeak-ng -lncurses -o bin/app
+	g++ -g src/screen.cpp src/main.cpp -lespeak-ng -lncurses -o bin/app
 
 
