@@ -4,14 +4,14 @@
 #include "screen.h"
 
 inline void handleCommand(const std::string& input, const Screen& screen) {
-	std::string text;
+	std::string outText;
 	if (input == "look") {
-		text = "You see nothing important.";
+		outText = "You see nothing important.";
 	}
 	if (input == "move") {
-		text = "You move through the world.";
+		outText = "You move through the world.";
 	}
-	screen.Output(text);
+	screen.Output(outText);
 }
 
 inline bool handleQuit(const std::string& input, const Screen& screen) {
