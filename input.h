@@ -1,8 +1,6 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-#include <ncurses.h>
-#include "speechsynth.h"
 #include "screen.h"
 
 inline void handleCommand(const std::string& input, const Screen& screen) {
