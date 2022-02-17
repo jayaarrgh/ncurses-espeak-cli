@@ -1,5 +1,5 @@
 #include <ncurses.h>
-#include "speachsynth.h"
+#include "speechsynth.h"
 #include "screen.h"
 
 inline void handleCommand(const std::string& input, const Screen& screen) {

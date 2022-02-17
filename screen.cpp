@@ -4,9 +4,9 @@ Screen::Screen(){
 	// create a single instace of tts for now
 	// having difficulty with segfaults
 	// prob not initializing, terminating and freeing resources properly
-	/* TextToSpeach tts; */
-	this->m_tts = TextToSpeach{};
+	/* TextToSpeech tts; */
 	// initializing tts in a second step for now
+	this->m_tts = TextToSpeech{};
 	this->m_tts.Initalize(); 
 	this->setupInputWindow();
 	this->setupOutputWindow();

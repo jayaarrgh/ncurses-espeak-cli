@@ -2,12 +2,12 @@
 #define SCREEN_H
 
 #include <ncurses.h>
-#include "speachsynth.h"
+#include "speechsynth.h"
 
 
 class Screen {
 	private:
-		TextToSpeach m_tts;
+		TextToSpeech m_tts;
 		WINDOW * inWin;
 		WINDOW * outWin;
 		void setupInputWindow();

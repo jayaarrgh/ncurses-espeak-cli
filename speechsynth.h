@@ -6,7 +6,7 @@
 #include <espeak-ng/speak_lib.h>
 
 
-class TextToSpeach {
+class TextToSpeech {
 private:
 	/* static constexpr char voicename[] = {"English"};	 // Set voice by its name *1/ */
 	espeak_AUDIO_OUTPUT m_output = AUDIO_OUTPUT_SYNCH_PLAYBACK;
@@ -18,13 +18,11 @@ private:
 	unsigned int m_position = 0, m_end_position = 0, m_flags = espeakCHARS_AUTO;
 	espeak_POSITION_TYPE m_position_type = espeak_POSITION_TYPE::POS_SENTENCE;
 public:
-	TextToSpeach(){
+	TextToSpeech(){
 	}
 	
-	~TextToSpeach() {
+	~TextToSpeech() {
 		espeak_Terminate();
-		/* free(m_user_data); */
-		/* delete m_identifier; */
 		
 	}
 	
@@ -44,7 +42,6 @@ public:
 	}
 
 	void Speak(const std::string& text) const {
-		/* std::cout << text << "\n"; */
 		espeak_Synth(&text[0], m_buflength, m_position,
 			m_position_type, m_end_position, m_flags, 
 			NULL, m_user_data); 

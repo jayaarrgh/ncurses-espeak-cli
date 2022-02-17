@@ -2,7 +2,7 @@
 
 #include <ncurses.h>
 
-#include "speachsynth.h"
+#include "speechsynth.h"
 #include "screen.h"
 #include "input.h"
 
