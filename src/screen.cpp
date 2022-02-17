@@ -6,8 +6,8 @@ Screen::Screen() {
 	// prob not initializing, terminating and freeing resources properly
 	this->m_tts = TextToSpeech{};
 	// initializing tts in a second step for now
-	/* this->m_tts.Initalize("f5"); */
-	this->m_tts.Initalize();
+	/* this->m_tts.Initialize("f5"); */
+	this->m_tts.Initialize();
 	this->setupInputWindow();
 	this->setupOutputWindow();
 }

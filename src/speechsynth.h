@@ -26,13 +26,13 @@ public:
 		
 	}
 	
-	void Initalize(){
+	void Initialize(){
 		espeak_Initialize(m_output, m_buflength, m_path, m_options);
 		char voicename[] = {"English"};	 // Set voice by its name
 		espeak_SetVoiceByName(voicename);
 	}
 
-	void Initalize(const char * voicename){
+	void Initialize(const char * voicename){
 		espeak_Initialize(m_output, m_buflength, m_path, m_options);
 		espeak_SetVoiceByName(voicename);
 	}
