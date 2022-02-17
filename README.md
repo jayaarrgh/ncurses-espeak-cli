@@ -1,5 +1,5 @@
 # Requirements
-##espeak-ng
+### espeak-ng
 You may be able to install this via package manager, but I built the shared lib from source
 
 [espeak-ng](https://github.com/espeak-ng/espeak-ng)
@@ -8,7 +8,7 @@ You may be able to install this via package manager, but I built the shared lib 
 sudo apt-get install espeak-ng-espeak 
 ```
 
-## ncurses
+### ncurses
 
 ```
 sudo apt-get install libncurses5-dev
@@ -16,3 +16,9 @@ sudo apt-get install libncurses5-dev
 
 ## Install
 using makefile for now
+
+`make && ./bin/app`
+
+or
+
+`make && gdb bin/app`
