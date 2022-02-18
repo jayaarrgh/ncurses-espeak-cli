@@ -4,6 +4,7 @@
 #include <string>
 
 #include <espeak-ng/speak_lib.h>
+/* #include <espeak/speak_lib.h> */
 
 
 class TextToSpeech {

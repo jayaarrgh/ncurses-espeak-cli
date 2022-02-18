@@ -8,6 +8,16 @@ You may be able to install this via package manager, but I built the shared lib 
 sudo apt-get install espeak-ng-espeak 
 ```
 
+Not sure on the diff, but espeak (no -ng) was available for cygwin package management.
+
+Using it required removing -ng from the link in the g++ command and include in speechsynth.h
+
+When I use it on linux, it has some noise about my sound card printed to stdout/err, but other than that seems to work fine
+
+```
+sudo apt-get install libespeak-dev
+```
+
 ### ncurses
 
 ```
