@@ -4,9 +4,10 @@ Screen::Screen() {
 	// create a single instace of tts for now
 	// having difficulty with segfaults
 	// prob not initializing, terminating and freeing resources properly
+	/* this->m_tts = TextToSpeech{"f5"}; */
 	this->m_tts = TextToSpeech{};
 	// initializing tts in a second step for now
-	/* this->m_tts.Initialize("f5"); */
+	// i don't know why but I can initalize in the constructor
 	this->m_tts.Initialize();
 	this->setupInputWindow();
 	this->setupOutputWindow();
@@ -43,20 +44,20 @@ void Screen::IntroScreen() {
 	getmaxyx(stdscr, row, col); /* get the number of rows and columns */
 
 	// The "move"s below make the text about center adjusted
-	move((row / 2) - 1, (col / 2) - 11);
+	move((LINES / 2) - 1, (COLS / 2) - 11);
 	printw("Welcome to the world!");
 	refresh();
 	this->m_tts.Speak("Welcome to the world!");
 
 	printw("\n");
-	move(row / 2, (col / 2) - 25);
+	move(LINES / 2, (COLS / 2) - 25);
 	printw("Use the commands 'move' and 'look' to move and look");
 	refresh();
 	this->m_tts.Speak(
 	    "Use the commands 'move' and 'look' to move and look");
 
 	printw("\n");
-	move((row / 2) + 2, (col / 2) - 17);
+	move((LINES / 2) + 2, (COLS / 2) - 17);
 	printw("Press any character to continue...");
 	refresh();
 	this->m_tts.Speak("Press any character to continue...");
