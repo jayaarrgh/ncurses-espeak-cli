@@ -2,11 +2,11 @@
 
 
 TextToSpeech::TextToSpeech(){
-	this->voicename = "English";
+	this->m_voicename = "English";
 }
 
 TextToSpeech::TextToSpeech(const std::string& name){
-	this->voicename = std::move(name);
+	this->m_voicename = std::move(name);
 }
 	
 TextToSpeech::~TextToSpeech() {
@@ -15,7 +15,7 @@ TextToSpeech::~TextToSpeech() {
 
 void TextToSpeech::Initialize(){
 	espeak_Initialize(m_output, m_buflength, m_path, m_options);
-	espeak_SetVoiceByName(this->voicename.c_str());
+	espeak_SetVoiceByName(this->m_voicename.c_str());
 }
 
 void TextToSpeech::Speak(const std::string& text) const {
