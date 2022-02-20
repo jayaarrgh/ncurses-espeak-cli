@@ -6,7 +6,7 @@ TextToSpeech::TextToSpeech(){
 }
 
 TextToSpeech::TextToSpeech(const std::string& name){
-	this->m_voicename = std::move(name);
+	this->m_voicename = name;
 }
 	
 TextToSpeech::~TextToSpeech() {
