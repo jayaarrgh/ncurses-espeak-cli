@@ -76,7 +76,9 @@ std::string Screen::GetInput() {
 	char userInput[256];
 	// move cursor to inside the inputWindow and getstr
 	mvwgetstr(this->inWin, 1, 1, userInput);
-	return (std::string)userInput;
+	// compiler can do this for us
+	/* return (std::string)userInput; */
+	return userInput;
 }
 
 void Screen::Output(const std::string& text) const {
